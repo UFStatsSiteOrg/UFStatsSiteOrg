@@ -1,4 +1,4 @@
-//const { assert } = require('console');
+const { assert } = require('console');
 const assert = require('assert').strict;
 var should = require('should'),
     fs = require('fs'),
@@ -69,7 +69,7 @@ describe('UF Directory Server Unit Tests', function() {
             request.get('http://localhost:8080/listings', function(error, response, body) {
 
                 // First let's assert that the body being passed by the get request actually exists or not with our general assertions, similar to the previous test:
-                assert.notEqual(response, null, "Should not be null");
+                assert.notEqual(body, null, "Should not be null");
 
                 // Next, use deepEquals() for object level comparison. We want to assert that the "listings" JSON provided by the get request is the same as the JSON file provided by the test (bodyData)
                
