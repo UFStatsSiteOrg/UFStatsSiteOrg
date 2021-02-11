@@ -17,18 +17,18 @@ jobs:
       - image: circleci/node:10-browsers
     steps:
       - run:
-        name: Server starting
-        command: |
-          BROWSER=chrome npm start
-          echo 'Server started'
+          name: Server starting
+          command: |
+            BROWSER=chrome npm start
+            echo 'Server started'
   Run-Tests:
     docker:
       - image: circleci/node:10-browsers
     steps:
       - run:
-        name: Running tests
-        command: |
-          mocha server.test.js
+          name: Running tests
+          command: |
+            mocha server.test.js
 
 workflows:
   version: 2
@@ -39,7 +39,7 @@ workflows:
           requires:
             - Install
       - Run-Tests:
-        requires:
-          - Install
+          requires:
+            - Install
         
           
