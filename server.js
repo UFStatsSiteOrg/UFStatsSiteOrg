@@ -2,7 +2,7 @@
 var http = require('http'), 
 	fs = require('fs'), 
  	url = require('url'),
-  	port = 8080;
+  	port = 80;
 
 /* Global variables */
 var listingData, server;
