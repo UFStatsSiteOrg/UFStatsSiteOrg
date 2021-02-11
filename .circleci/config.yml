@@ -10,7 +10,7 @@ jobs:
           name: Install dependencies
           command: |
             node -v
-            npm install -g mocha
+            npm install mocha
             npm install
   Start-Server:
     docker:
