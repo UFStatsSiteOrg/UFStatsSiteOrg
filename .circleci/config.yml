@@ -13,4 +13,12 @@ jobs:
             npm install mocha
             npm install
             BROWSER=chrome npm start
-            mocha server.test.js
+   build:
+    docker:
+      - image: circleci/node:10-browsers
+    steps:
+      - checkout
+      - run:
+          name: Second build
+          command: |
+           mocha server.test.js
