@@ -50,7 +50,7 @@ describe('UF Directory Server Unit Tests', function() {
                 */
 
 
-                assert.equal((4 + 5), , listings);
+                assert.equal((4 + 5), 10, listings);
 
 
 
