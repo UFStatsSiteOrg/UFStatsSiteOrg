@@ -1,21 +1,45 @@
 version: 2.1
 jobs:
-  build:
+  Install:
     # pre-built images: https://circleci.com/docs/2.0/circleci-images/
     docker:
       - image: circleci/node:10-browsers
     steps:
       - checkout
       - run:
-          name: Running in a Unique Container
+          name: Install dependencies
           command: |
             node -v
             npm install mocha
             npm install
-            BROWSER=chrome npm start
+  Start-Server:
+    docker:
+      - image: circleci/node:10-browsers
+    steps:
       - run:
-          name: Testing
-          command: |
-            mocha server.test.js
+        name: Server starting
+        command: |
+          BROWSER=chrome npm start
+          echo 'Server started'
+  Run-Tests:
+    docker:
+      - image: circleci/node:10-browsers
+    steps:
+      - run:
+        name: Running tests
+        command: |
+          mocha server.test.js
 
+workflows:
+  version: 2
+  Testing:
+    jobs:
+      - Install
+      - Start-Server:
+          requires:
+            - Install
+      - Run-Tests:
+        requires:
+          - Install
+        
           
