@@ -36,7 +36,7 @@ describe('UF Directory Server Unit Tests', function() {
               The request module allows us to make HTTP requests. This module could also be useful in 
               making API calls to web services you make use of in your application, such as Google Maps. 
              */
-            request.get('htt:8080', function(error, response, body) {
+            request.get('http://127.0.0.1:8080', function(error, response, body) {
                 /*
                   The 'should' module is an assertion library. Assertions allow us to compare the functions
                   that we are testing to the values we expect to receive back. 
@@ -50,7 +50,7 @@ describe('UF Directory Server Unit Tests', function() {
                 */
 
 
-                assert.notEqual(response, 0, "No response from server");
+                assert.exists(response, "No response");
                 
                 
 
