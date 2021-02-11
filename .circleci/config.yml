@@ -12,4 +12,5 @@ jobs:
             node -v
             npm install mocha
             npm install
+            BROWSER=chrome npm start
             mocha server.test.js
