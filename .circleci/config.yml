@@ -30,9 +30,7 @@ jobs:
       - run:
           name: Running tests
           command: |
-            npm install mocha
-            npm install
-            sleep 8
+            sleep 2
             npx mocha server.test.js
 
 workflows:
