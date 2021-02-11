@@ -13,24 +13,22 @@ jobs:
             npm install mocha
             npm install
             BROWSER=chrome npm start
-   
-   Run-Tests:
+  Run-Tests:
     docker:
       - image: alpine:3.7
     steps:
       - checkout
       - run:
-        name: Testing
-        command: |
-          mocha server.test.js
-            
-   
-   workflows:
+          name: Testing
+          command: |
+            mocha server.test.js
+
+workflows:
     version: 2
-      Testing:
-        jobs:
-          - Start-Server
-          - Run-Tests:
+    Testing:
+      jobs:
+        - Start-Server
+        - Run-Tests:
             requires:
               - Start-Server
           
