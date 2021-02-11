@@ -22,7 +22,7 @@ jobs:
           command: |
             npm install mocha
             npm install
-            BROWSER=chrome npm start
+            npm start
             echo 'Server started'
   Run-Tests:
     docker:
