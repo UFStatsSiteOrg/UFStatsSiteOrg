@@ -11,4 +11,4 @@ jobs:
           command: |
             node -v
             npm install mocha
-            npm test
+            npm install
