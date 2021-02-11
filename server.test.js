@@ -66,7 +66,7 @@ describe('UF Directory Server Unit Tests', function() {
     // In these tests, we will be checking more specific content using object and primitive comparisons that have specific values.
     describe('Server provides listing data as JSON on proper request', function() {
         it('responds correctly to a GET request to "/listings"', function(done) {
-            request.get('http://localhost:8080/listings', function(error, response, body) {
+            request.get('http://127.0.0.1:8080/listings', function(error, response, body) {
 
                 // First let's assert that the body being passed by the get request actually exists or not with our general assertions, similar to the previous test:
                 assert.notEqual(body, null, "Should not be null");
