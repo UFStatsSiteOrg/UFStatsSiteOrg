@@ -1,5 +1,5 @@
 const { assert } = require('console');
-const assert = require('assert').strict;
+//const assert = require('assert').strict;
 var should = require('should'),
     fs = require('fs'),
     request = require('request');
