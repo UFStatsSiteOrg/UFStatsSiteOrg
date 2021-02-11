@@ -72,9 +72,9 @@ describe('UF Directory Server Unit Tests', function() {
                 assert.notEqual(body, null, "Should not be null");
 
                 // Next, use deepEquals() for object level comparison. We want to assert that the "listings" JSON provided by the get request is the same as the JSON file provided by the test (bodyData)
-               
+               bodyData = JSON.parse(body);
 
-                assert.deepEqual(listings, listings, "Data does not match");
+                assert.deepEqual(bodyData, listings, "Data does not match");
                 // Finally, call "done();" to move onto the next test
                 done();
 
