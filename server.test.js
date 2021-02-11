@@ -50,7 +50,7 @@ describe('UF Directory Server Unit Tests', function() {
                 */
 
 
-                assert.notEqual(response, null. "No response from server");
+                assert.notEqual(response, null, "No response from server");
                 
                 assert.equal(response, null, "Server responding");
 
