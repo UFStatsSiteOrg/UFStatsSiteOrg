@@ -20,6 +20,8 @@ jobs:
       - run:
           name: Server starting
           command: |
+            npm install mocha
+            npm install
             BROWSER=chrome npm start
             echo 'Server started'
   Run-Tests:
@@ -30,7 +32,9 @@ jobs:
       - run:
           name: Running tests
           command: |
-            sleep 5
+            npm install mocha
+            npm install
+            sleep 30
             mocha server.test.js
 
 workflows:
