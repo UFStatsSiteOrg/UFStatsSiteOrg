@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  Start-Server:
+  build:
     # pre-built images: https://circleci.com/docs/2.0/circleci-images/
     docker:
       - image: circleci/node:10-browsers
@@ -13,22 +13,9 @@ jobs:
             npm install mocha
             npm install
             BROWSER=chrome npm start
-  Run-Tests:
-    docker:
-      - image: alpine:3.7
-    steps:
-      - checkout
       - run:
           name: Testing
           command: |
             mocha server.test.js
 
-workflows:
-    version: 2
-    Testing:
-      jobs:
-        - Start-Server
-        - Run-Tests:
-            requires:
-              - Start-Server
           
