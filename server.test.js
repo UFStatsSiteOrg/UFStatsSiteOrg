@@ -19,7 +19,7 @@ describe('UF Directory Server Unit Tests', function() {
       the response to 'http://localhost:8080/listings' to the data we expect to recieve. 
      */
     before(function(done) {
-        fs.readFile('listings.json', 'utf8', function(err, data) {
+        fs.readFile('http://localhost:8080/listings.json', 'utf8', function(err, data) {
             listings = JSON.parse(data);
 
             /*
@@ -50,7 +50,9 @@ describe('UF Directory Server Unit Tests', function() {
                 */
 
 
-                assert.equal((4 + 5), 10, "Failed");
+                assert.notEqual(response, null. "No response from server");
+                
+                assert.equal(response, null, "Server responding");
 
 
 
