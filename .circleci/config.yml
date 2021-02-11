@@ -30,6 +30,7 @@ jobs:
       - run:
           name: Running tests
           command: |
+            sleep 5
             mocha server.test.js
 
 workflows:
