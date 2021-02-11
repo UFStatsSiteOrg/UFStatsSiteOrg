@@ -69,8 +69,16 @@ describe('UF Directory Server Unit Tests', function() {
             request.get('http://localhost:8080/listings', function(error, response, body) {
 
                 // First let's assert that the body being passed by the get request actually exists or not with our general assertions, similar to the previous test:
-                assert.notEqual(body, null, "Should not be null");
+                //assert.notEqual(body, null, "Should not be null");
+                fs.readFile('http://localhost:8080/listings', 'utf8', function(err, body) {
+                    bodyData = JSON.parse(body);
 
+            /*
+              Calling done() will pass code execution to the next appropriate block of code. 
+              In this case, execution will pass to the first it() statement.  
+             */
+            done();
+                }
                 // Next, use deepEquals() for object level comparison. We want to assert that the "listings" JSON provided by the get request is the same as the JSON file provided by the test (bodyData)
                bodyData = JSON.parse(body);
 
