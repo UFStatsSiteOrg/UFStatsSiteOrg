@@ -35,7 +35,7 @@ jobs:
             npm install mocha
             npm install
             sleep 15
-            mocha server.test.js
+            npm mocha server.test.js
 
 workflows:
   version: 2
