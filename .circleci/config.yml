@@ -34,7 +34,7 @@ jobs:
           command: |
             npm install mocha
             npm install
-            sleep 15
+            sleep 8
             npx mocha server.test.js
 
 workflows:
