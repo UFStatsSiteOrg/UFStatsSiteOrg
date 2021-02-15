@@ -1,14 +1,13 @@
 version: 2.1
 
 orbs:
-  win: circleci/windows@2.2.0
+  win: circleci/node@3.0.0
   
 jobs:
   Install:
     # pre-built images: https://circleci.com/docs/2.0/circleci-images/
     executor: 
-      name: win/default
-      shell: powershell.exe
+      name: node/default
     steps:
       - checkout
       - run:
@@ -17,7 +16,13 @@ jobs:
             node -v
             npm install mocha
             npm install
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
   Start-Server:
+    docker:
+      - image: cimg/node:current
     steps:
       - checkout
       - run:
@@ -26,6 +31,8 @@ jobs:
             npm start
             echo 'Server started'
   Run-Tests:
+    docker:
+      - image: cimg/node:current
     steps:
       - checkout
       - run:
