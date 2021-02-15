@@ -44,12 +44,12 @@ workflows:
   version: 2
   Testing:
     jobs:
-      - Install
+      - build
       - Start-Server:
           requires:
-            - Install
+            - build
       - Run-Tests:
           requires:
-            - Install
+            - build
         
           
