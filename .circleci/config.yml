@@ -6,8 +6,7 @@ orbs:
 jobs:
   Install:
     # pre-built images: https://circleci.com/docs/2.0/circleci-images/
-    executor: 
-      - name: node/default
+    executor: node/default
     steps:
       - checkout
       - run:
