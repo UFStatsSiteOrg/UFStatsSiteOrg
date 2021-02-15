@@ -15,7 +15,4 @@ jobs:
             node -v
             npm install mocha
             npm install
-            npm start
-            echo 'Server started'
-            sleep 2
             npx mocha server.test.js
