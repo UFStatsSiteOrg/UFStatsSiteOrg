@@ -49,7 +49,7 @@ workflows:
     jobs:
       - build
       - Start-Server:
-        requires:
+          requires:
           - build
       - Run-Tests:
           requires:
