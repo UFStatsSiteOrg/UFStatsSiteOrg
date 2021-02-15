@@ -23,7 +23,7 @@ jobs:
   Start-Server:
     docker:
       - image: cimg/node-current
-     steps:
+    steps:
       - attach_workspace:
           at: .
       - checkout
