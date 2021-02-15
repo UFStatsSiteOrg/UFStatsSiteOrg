@@ -37,11 +37,8 @@ workflows:
   version: 2
   Testing:
     jobs:
-      - Install
-      - Start-Server:
-          requires:
-            - Install
+      - build
       - Run-Tests:
           requires:
-            - Install
+            - build
         
