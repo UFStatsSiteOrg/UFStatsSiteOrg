@@ -1,9 +1,14 @@
 version: 2.1
+
+orbs:
+  win: circleci/windows@2.2.0
+  
 jobs:
   Install:
     # pre-built images: https://circleci.com/docs/2.0/circleci-images/
-    docker:
-      - image: circleci/node:10-browsers
+    executor: 
+      name: win/default
+      shell: powershell.exe
     steps:
       - checkout
       - run:
@@ -13,8 +18,6 @@ jobs:
             npm install mocha
             npm install
   Start-Server:
-    docker:
-      - image: circleci/node:10-browsers
     steps:
       - checkout
       - run:
@@ -23,8 +26,6 @@ jobs:
             npm start
             echo 'Server started'
   Run-Tests:
-    docker:
-      - image: circleci/node:10-browsers
     steps:
       - checkout
       - run:
