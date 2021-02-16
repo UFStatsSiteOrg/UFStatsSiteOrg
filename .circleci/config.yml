@@ -4,7 +4,7 @@ orbs:
   node: circleci/node@3.0.0
   
 jobs:
-  build:
+  Build_And_Test:
     # pre-built images: https://circleci.com/docs/2.0/circleci-images/
     executor: node/default
     steps:
@@ -18,9 +18,4 @@ jobs:
       - run:
           name: Run Mocha tests
           command: npx mocha server.test.js
-workflows:
-  version: 2
-  Test_Node_Server:
-    jobs:
-      - build
         
