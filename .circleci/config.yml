@@ -15,14 +15,12 @@ jobs:
             node -v
             npm install mocha
             npm install
-            npx mocha server.test.js
-      - persist_to_workspace:
-          root: .
-          paths:
-            - .
+      - run:
+          name: Run Mocha tests
+          command: npx mocha server.test.js
 workflows:
   version: 2
-  Testing:
+  Test_Node_Server:
     jobs:
       - build
         
