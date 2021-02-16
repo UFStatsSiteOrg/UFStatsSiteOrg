@@ -31,7 +31,7 @@ var requestHandler = function(request, response) {
 // Server initialization
 var server = http.createServer(requestHandler);
 
-module.exports = () => {
+module.exports.setUp = () => {
 	fs.readFile('listings.json', 'utf8', function(err, data) {
 		/*
 		 This callback function should save the data in the listingData variable, 
@@ -48,6 +48,10 @@ module.exports = () => {
 	  });
 	 
   });
+}
+
+module.exports.shutDown = () => {
+	server.close();
 }
 
 

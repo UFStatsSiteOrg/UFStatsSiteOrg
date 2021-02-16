@@ -1,7 +1,7 @@
 const assert = require('assert').strict;
 const fs = require('fs');
 const request = require('request');
-
+const server = require('./server');
 /* Globals */
 var listings;
 
@@ -25,7 +25,7 @@ before(function(done) {
             */
     });
      // Start server prior to tests
-    require('./server')();
+    server.setUp();
     // Give server adequate time to set up before calling done();
     setTimeout(() => done(), 1000); 
 });
@@ -86,3 +86,6 @@ describe('UF Directory Server Unit Tests', function() {
     });
 
 });
+
+// Close server connection once tests complete
+after(() => { server.shutDown(); })
