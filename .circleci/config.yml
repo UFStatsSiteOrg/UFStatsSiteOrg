@@ -8,7 +8,9 @@ jobs:
     # pre-built images: https://circleci.com/docs/2.0/circleci-images/
     steps:
       - persist_to_workspace:
-        root: /tmp/workspace
+          root: /tmp/workspace
+          paths: 
+            - .
       - checkout
       - run:
           name: Install dependencies
@@ -21,9 +23,10 @@ jobs:
       steps:
         - attach_workspace:
             at: /tmp/workspace
-        -run:
-          name: Run Mocha tests
-          command: npx mocha server.test.js
+        - checkout
+        - run:
+            name: Run Mocha tests
+            command: npx mocha server.test.js
 workflows:
   version: 2
   Test_Node_Server:
