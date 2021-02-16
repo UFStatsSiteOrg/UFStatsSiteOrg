@@ -15,27 +15,14 @@ jobs:
             node -v
             npm install mocha
             npm install
+            npx mocha server.test.js
       - persist_to_workspace:
           root: .
           paths:
             - .
-  Run-Tests:
-    docker:
-      - image: cimg/node:current
-    steps:
-      - attach_workspace:
-          at: .
-      - checkout
-      - run:
-          name: Running tests
-          command: |
-            npx mocha server.test.js
 workflows:
   version: 2
   Testing:
     jobs:
       - build
-      - Run-Tests:
-          requires:
-            - build
         
