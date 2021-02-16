@@ -16,14 +16,14 @@ jobs:
             npm install mocha
             npm install
       - persist_to_workspace:
-          root: workspace
+          root: .
           paths: 
-            - echo-output
+            - .
   test_server:
       executor: node/default
       steps:
         - attach_workspace:
-            at: /tmp/workspace
+            at: .
         - checkout
         - run:
             name: Run Mocha tests
