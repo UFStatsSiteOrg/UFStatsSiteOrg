@@ -4,10 +4,11 @@ orbs:
   node: circleci/node@3.0.0
   
 jobs:
-  Build_And_Test:
+  build:
     # pre-built images: https://circleci.com/docs/2.0/circleci-images/
-    executor: node/default
     steps:
+      - persist_to_workspace:
+        root: /tmp/workspace
       - checkout
       - run:
           name: Install dependencies
@@ -15,7 +16,20 @@ jobs:
             node -v
             npm install mocha
             npm install
-      - run:
+  test_server:
+      executor: node/default
+      steps:
+        - attach_workspace:
+            at: /tmp/workspace
+        -run:
           name: Run Mocha tests
           command: npx mocha server.test.js
+workflows:
+  version: 2
+  Test_Node_Server:
+    jobs:
+      - build
+      - test_server:
+          requires:
+            - build
         
