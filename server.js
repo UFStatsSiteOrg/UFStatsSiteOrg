@@ -31,19 +31,23 @@ var requestHandler = function(request, response) {
 // Server initialization
 var server = http.createServer(requestHandler);
 
-fs.readFile('listings.json', 'utf8', function(err, data) {
-  	/*
-   	This callback function should save the data in the listingData variable, 
-    	then start the server. 
-   */
-   // error and data handling
-  	if(err) throw err;
+module.exports = () => {
+	fs.readFile('listings.json', 'utf8', function(err, data) {
+		/*
+		 This callback function should save the data in the listingData variable, 
+		  then start the server. 
+	 */
+	 // error and data handling
+		if(err) throw err;
+	
+		listingData = data;
   
-  	listingData = data;
+	  // Start the server
+		server.listen(port, function() {
+		  console.log('Server listening on: http://127.0.0.1:' + port);   
+	  });
+	 
+  });
+}
 
-	// Start the server
-  	server.listen(port, function() {
-		console.log('Server listening on: http://127.0.0.1:' + port);   
-	});
-   
-});
+

@@ -1,8 +1,6 @@
-const { asset } = require('console');
 const assert = require('assert').strict;
-var should = require('should'),
-    fs = require('fs'),
-    request = require('request');
+const fs = require('fs');
+const request = require('request');
 
 /* Globals */
 var listings;
@@ -12,24 +10,27 @@ var listings;
   
   They can be nested.
  */
-describe('UF Directory Server Unit Tests', function() {
 
-    /*
-      This before hook loads the JSON data to the listings variable, so that we can compare 
-      the response to 'http://localhost:8080/listings' to the data we expect to recieve. 
-     */
-    before(function(done) {
-        fs.readFile('listings.json', 'utf8', function(err, data) {
-            listings = JSON.parse(data);
+/*
+This before hook loads the JSON data to the listings variable, so that we can compare 
+the response to 'http://localhost:8080/listings' to the data we expect to recieve. 
+*/
+before(function(done) {
+    fs.readFile('listings.json', 'utf8', function(err, data) {
+        listings = JSON.parse(data);
 
-            /*
-              Calling done() will pass code execution to the next appropriate block of code. 
-              In this case, execution will pass to the first it() statement.  
-             */
-            done();
-        });
+        /*
+            Calling done() will pass code execution to the next appropriate block of code. 
+            In this case, execution will pass to the first it() statement.  
+            */
     });
+     // Start server prior to tests
+    require('./server')();
+    // Give server adequate time to set up before calling done();
+    setTimeout(() => done(), 1000); 
+});
 
+describe('UF Directory Server Unit Tests', function() {
     describe('Server responds to requests', function() {
         it('should respond', function(done) {
             /*
@@ -48,14 +49,7 @@ describe('UF Directory Server Unit Tests', function() {
                   In the second, assert what we should  see.
                   Finally, call "done();" to move on to the next test.
                 */
-
-
                 assert.notEqual(response, null, "No response");
-                
-                
-
-
-
                 done();
 
             });
@@ -67,41 +61,26 @@ describe('UF Directory Server Unit Tests', function() {
     describe('Server provides listing data as JSON on proper request', function() {
         it('responds correctly to a GET request to "/listings"', function(done) {
             request.get('http://localhost:8080/listings', function(error, response, body) {
-
                 // First let's assert that the body being passed by the get request actually exists or not with our general assertions, similar to the previous test:
                 //assert.notEqual(body, null, "Should not be null");
-                fs.readFile('http://localhost:8080/listings', 'utf8', function(err, body) {
-                    bodyData = JSON.parse(body);
-
-            /*
-              Calling done() will pass code execution to the next appropriate block of code. 
-              In this case, execution will pass to the first it() statement.  
-             */
-            done();
-                });
+                bodyData = JSON.parse(body);
+                assert.notEqual(body, null, "Should not be null");
                 // Next, use deepEquals() for object level comparison. We want to assert that the "listings" JSON provided by the get request is the same as the JSON file provided by the test (bodyData)
-               
-
                 assert.deepEqual(bodyData, listings, "Data does not match");
                 // Finally, call "done();" to move onto the next test
                 done();
-
-
             });
         });
 
         // For the last test, let's use make primitive value comparisons
         it('responds with a 404 error to other GET requests', function(done) {
-            request.get('http://localhost/pizza', function(error, response, body) {
+            request.get('http://localhost:8080/pizza', function(error, response, body) {
                 // First, assert that the status code is what it's supposed to be (exactly 404) if the listing were missing.
                 assert.equal(response.statusCode, 404, "404 Error");
-
                 // For the last assertion, check that the string output is the same message server.js outputs when a listing is missing:
                 assert.equal(body, "404, Page Not Found", "Matches again");
                 // Finally, call "done();" to finish!
                 done();
-
-
             });
         });
     });
