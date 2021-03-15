@@ -1,0 +1,5 @@
+export { default as HomePage } from "./home"
+export { default as OfficerPage } from "./officers"
+export { default as InternshipsPage } from "./internships"
+export { default as PollsPage } from "./polls"
+export { default as RPage } from "./r"
