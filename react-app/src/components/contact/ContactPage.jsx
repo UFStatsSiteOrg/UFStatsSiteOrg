@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NavBar from "../NavBar";
 class ContactPage extends Component {
     constructor(props) {
         super(props);
@@ -15,7 +16,8 @@ class ContactPage extends Component {
 
     render() { 
         return ( 
-        <div> 
+        <div>
+            <NavBar />
             <p>
                 {this.submitContact()}
             </p>
