@@ -76,14 +76,13 @@ class ContactPage extends Component {
                 </div>
                 <div>
                     <label htmlFor="message">Message:</label>
-                    <input
-                        type="text"
-                        id="message"
-                        value={this.state.message}
-                        onChange={this.handleChange.bind(this)}
-                        required
-                        className="block w-full shadow py-20 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md focus:outline-none focus:ring-2"
-                    />
+                    <textarea 
+                    class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none inline-block align-top focus:ring-blue-500 
+                    focus:border-blue-500 border-gray-300 rounded-md focus:outline-none focus:ring-2" 
+                    rows="4"
+                    name="message">
+                    </textarea>
+
                 </div>
                 <div>
                     <button
@@ -93,29 +92,6 @@ class ContactPage extends Component {
                         {buttonText}
                     </button>
                 </div>
-            {/* <div>
-                <label htmlFor="Email" className="sr-only">
-                Email:
-                </label>
-                <input
-                    type="email"
-                    id="email"
-                    value={this.state.email}
-                    onChange={this.handleChange.bind(this)}
-                    required
-                    placeholder="Email"
-                />
-            </div>
-            <div>
-            <label htmlFor="message">Message:</label>
-            <textarea
-                id="message"
-                value={this.state.message}
-                onChange={this.handleChange.bind(this)}
-                required
-            />
-            </div>
-            <button type="submit">{buttonText}</button> */}
         </form>   
         </div>   
         </div>
@@ -126,3 +102,11 @@ class ContactPage extends Component {
 }
  
 export default ContactPage;
+                    // {/* <textarea
+                    //     name="message"
+                    //     rows="4"
+                    //     value={this.state.message}
+                    //     onChange={this.handleChange.bind(this)}
+                    //     required
+                    //     class="block w-full shadow py-20 px-4 placeholder-gray-500 inline-block align-top focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md focus:outline-none focus:ring-2"
+                    //     placeholder="Message"></textarea>   */}
