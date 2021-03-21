@@ -1,10 +1,15 @@
 import NavBar from "../NavBar";
-
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import './HomePage.css'
 function HomePage() {
     return (
         <div>
+
             <NavBar />
-            Home test
+            <Jumbotron>
+                <h1 class={"home-header"}>University of Florida Statistics Club</h1>
+
+            </Jumbotron>
         </div>
     )
 }
