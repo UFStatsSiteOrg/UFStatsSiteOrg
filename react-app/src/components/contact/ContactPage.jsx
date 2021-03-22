@@ -4,22 +4,6 @@ import {useForm} from 'react-hook-form';
 // eslint-disable-next-line
 
 import axios from 'axios';
-import React, { Component } from 'react';
-
-class ContactPage extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }    
-    
-    submitContact() {
-        return(
-            <button onClick={() => this.setState ({ liked: true})}>
-                Submit
-            </button>
-        );
-    }
-
 
     export default function ContactPage(){
         // eslint-disable-next-line
