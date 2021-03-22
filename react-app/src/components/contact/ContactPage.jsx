@@ -1,4 +1,6 @@
-//import React, { Component } from 'react';
+
+/* I would like to credit Adam Richardson for posting a tutorial that helped me tons in creating the form
+https://www.youtube.com/watch?v=7j6xWy4P_LA&ab_channel=DailyTuition */
 import {useForm} from 'react-hook-form'; 
 import axios from 'axios';
 
