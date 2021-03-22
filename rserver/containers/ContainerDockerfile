@@ -1,4 +1,0 @@
-FROM r-base
-COPY ./scripts /usr/local/src/r
-WORKDIR /usr/local/src/r
-
