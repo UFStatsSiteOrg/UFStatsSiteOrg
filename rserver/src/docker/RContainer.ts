@@ -12,7 +12,7 @@ export default class RContainer {
     public async startContainer() : Promise<boolean> {
         try {
             const { stdout, stdeer } = await exec(`docker run -itd -v ${process.env.CONTAINER_FILES_PATH}:$HOME/r -w $HOME/r --entrypoint bash r-base -c 'Rscript ./scripts/${this.request_id}.R'`);
-            console.log(`\nStarted container with id: ${stdout}\nScript ${this.request_id}.R executed.`)
+            console.log(`\nStarted container with id: ${stdout}\nScript ${this.request_id}.R executed`)
             this.container_id = stdout;
             return true;
         } catch (err){

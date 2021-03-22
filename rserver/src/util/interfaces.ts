@@ -1,9 +1,15 @@
-export interface RInput {
-    code : [string]
-}
-
-export interface RData {
-    id : string
-    timestamp : number
-    code : [string]
+export namespace R {
+    export interface Input {
+        code : [string]
+    }
+    
+    export interface Data {
+        id : string
+        timestamp : number
+        code : [string]
+    }
+    
+    export interface Response {
+        logs : string
+    }
 }
