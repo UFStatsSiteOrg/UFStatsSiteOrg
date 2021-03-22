@@ -2,6 +2,8 @@
 /* I would like to credit Adam Richardson for posting a tutorial that helped me tons in creating the form
 https://www.youtube.com/watch?v=7j6xWy4P_LA&ab_channel=DailyTuition */
 import {useForm} from 'react-hook-form'; 
+// eslint-disable-next-line
+
 import axios from 'axios';
 
     export default function ContactPage(){
@@ -34,7 +36,6 @@ import axios from 'axios';
         return ( 
         <div className="b py-16 bg-blue-50 px-4 sm:px-6 h-screen w-screen flex justify-center items-center">
             <div className="mx-auto w-full max-w-2xl rounded-xl bg-white p-8 shadow">
-                
                 <form
                     onSubmit={handleSubmit(onSubmitForm)} 
                     className="grid grid-cols-1 gap-y-6">
@@ -103,7 +104,7 @@ import axios from 'axios';
                     </button>
                 </div>
         </form>   
-        </div>   
+        </div>
         </div>
         );
     }
