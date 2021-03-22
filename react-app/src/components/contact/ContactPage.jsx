@@ -96,7 +96,7 @@ import axios from 'axios';
                 </div>
                 <div>
                     <button
-                    type="submit"
+                    type="reset"
                     className="inline-flex justify-center py-3 px-9 border border-transparent shadow text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 
                     focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                     Submit
