@@ -10,6 +10,7 @@ function HomePage() {
                 <h1 class={"home-header"}>University of Florida Statistics Club</h1>
 
             </Jumbotron>
+      
         </div>
     )
 }
