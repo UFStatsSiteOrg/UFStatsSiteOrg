@@ -5,6 +5,7 @@ import {useForm} from 'react-hook-form';
 // eslint-disable-next-line
 
 import axios from 'axios';
+import NavBar from "../NavBar";
 
     export default function ContactPage(){
         // eslint-disable-next-line
@@ -33,7 +34,9 @@ import axios from 'axios';
         
     }
     
-        return ( 
+        return (
+        <div>
+            <NavBar />
         <div className="b py-16 bg-blue-50 px-4 sm:px-6 h-screen w-screen flex justify-center items-center">
             <div className="mx-auto w-full max-w-2xl rounded-xl bg-white p-8 shadow">
                 <form
@@ -104,6 +107,7 @@ import axios from 'axios';
                     </button>
                 </div>
         </form>   
+        </div>
         </div>
         </div>
         );
