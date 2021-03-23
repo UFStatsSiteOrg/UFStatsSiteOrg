@@ -1,5 +1,6 @@
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button} from "react-bootstrap";
+import { Navbar, Nav} from "react-bootstrap";
 import React, {Component} from 'react'
+
 
 
 export default class NavBar extends Component {
@@ -7,7 +8,13 @@ export default class NavBar extends Component {
     render () {
         return (
         <Navbar bg="primary" variant={"light"}>
-            <Navbar.Brand href="/">Home</Navbar.Brand>
+            <Navbar.Brand href="/">
+                <img
+                    src="tealLogo.png"
+                    class={'img-fluid'}
+                    alt="Main Logo"
+                    />
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
