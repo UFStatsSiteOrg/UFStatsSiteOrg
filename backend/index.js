@@ -22,15 +22,15 @@ app.post('/api/contact', cors(corsOptions), async (req, res) => {
         port: 465,
         secure: true,
         auth:{
-            user: 'diglesias1026@gmail.com',
-            pass: 'DIgl05335!'
+            user: 'UFSWEStatsClub@gmail.com',
+            pass: 'Swe2021!'
         },
     });
 
     try {
         const emailResponse = await transporter.sendMail({
             from: email,
-            to: 'diglesias1026@gmail.com',
+            to: 'ufswestatsclub@gmail.com',
             subject: `Contact form submission from ${name}`,
             html: `<p>You have a new contact form submission</p><br>
             <p><strong> Name:  </strong> ${name} </p><br>
