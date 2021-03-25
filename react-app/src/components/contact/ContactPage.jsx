@@ -45,8 +45,8 @@ import './ContactPage.css'
                 <form
                     onSubmit={handleSubmit(onSubmitForm)} 
                     className="grid grid-cols-1 gap-y-6">
-                <div>
-                    <label htmlFor="Full Name">Name:</label>
+                <div className= "text-gray-600">
+                    <label htmlFor="Full Name"> Name:</label>
                     <input
                         type="text"
                         name="name"
@@ -62,7 +62,7 @@ import './ContactPage.css'
                     />
                     <span className="text-red-300 text -sm py-2">{errors?.name?.message}</span>
                 </div>
-                <div>
+                <div className= "text-gray-600">
                     <label htmlFor="Email">Email:</label>
                     <input
                         type="text"
@@ -83,7 +83,7 @@ import './ContactPage.css'
                     />
                     <span className="text-red-300 text -sm py-2">{errors?.email?.message}</span>
                 </div>
-                <div>
+                <div className= "text-gray-600">
                     <label htmlFor="message">Message:</label>
                     <textarea 
                     rows="4"
@@ -96,10 +96,10 @@ import './ContactPage.css'
                     })}
                     className={`w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none inline-block align-top focus:ring-blue-500 
                     focus:border-blue-500 border-gray-300 rounded-md focus:outline-none focus:ring-2`}
-                    >
+                    placeholder="Please enter a message..">
                     </textarea>
-                    <span className="text-red-300 text -sm py-2">{errors?.message?.message}</span>
-
+                    <span className="text-red-300 text -sm py-2">{errors?.message?.message} </span>
+                    
                 </div>
                 <div>
                     <button
