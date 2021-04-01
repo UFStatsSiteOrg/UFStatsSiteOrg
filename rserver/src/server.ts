@@ -12,7 +12,7 @@ app.post('/submit', async (req : Request, res : Response) => {
   const requestBody : R.Input = req.body;
   const data : R.Data = inputTransform(requestBody);
   console.log(data);
-  const rResponse : R.Response = await DockerController.runScript(data);
+  const rResponse : R.Response = await DockerController.execute(data);
   res.send(rResponse);
 })
 

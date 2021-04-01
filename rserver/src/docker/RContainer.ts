@@ -28,9 +28,9 @@ export default class RContainer {
                     console.log("Container ID is null.");
                     return {success : false};
             }
-            {
-                const { stdout, stdeer } = await exec(`docker wait ${this.container_id}`);
-            }
+            // Wait for execution in container to finish
+            await exec(`docker wait ${this.container_id}`);
+            // Capture output and any errors
             const { stdout, stdeer }  = await exec(`docker logs ${this.container_id}`);
             return { success : true, stdout : stdout, stderr : stdeer}
         } catch (err) {
