@@ -1,5 +1,9 @@
-import { createWriteStream } from 'fs';
+import { createWriteStream, unlink, readdir } from 'fs';
 import { R } from "../util/interfaces";
+import { promisify } from 'util';
+
+const unlinkPromise = promisify(unlink);
+const readdirPromise = promisify(readdir);
 
 export const createScriptFile = async (data : R.Data) : Promise<void> => {
     return new Promise( (resolve, reject) => {
@@ -13,4 +17,19 @@ export const createScriptFile = async (data : R.Data) : Promise<void> => {
             resolve();
         });
     });
+}
+
+export const cleanupFiles = async (id : string) : Promise<void> => {
+    // Removes .R file with uuid
+    await unlinkPromise(__dirname + `/../../containers/scripts/${id}.R`);
+    // Reads all files in output image directory
+    const files : string[] = await readdirPromise(__dirname + '/../../containers/output');
+    // Checks to see if any files match a regex with the uuid. Files can not be deleted directly because of numbers appended to them in the case of a single request having multiple response images.
+    files.forEach(
+        async file => {
+            if (file.match(new RegExp(`${id}.*`))) {
+                await unlinkPromise(__dirname + `/../../containers/output/${file}`);
+            }
+        }
+    )
 }
