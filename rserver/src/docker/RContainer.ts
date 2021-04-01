@@ -53,7 +53,7 @@ export default class RContainer {
     public async runRoutine() : Promise<R.Response> {
         await this.startContainer();
         const textOutput : R.Response = await this.captureOutput();
-        // await this.cleanupContainer();
+        await this.cleanupContainer();
         return textOutput;
     }
 
