@@ -3,7 +3,7 @@ import { R } from '../util/interfaces';
 
 const exec = promisify(require('child_process').exec);
 
-export default class RContainer {
+export default class Container {
     private request_id : string;
     private container_id : string | null = null;
     constructor(request_id : string){
