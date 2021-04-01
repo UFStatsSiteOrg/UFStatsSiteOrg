@@ -10,6 +10,8 @@ export namespace R {
     }
     
     export interface Response {
-        logs : string
+        success : boolean
+        stdout? : string
+        stderr? : string
     }
 }

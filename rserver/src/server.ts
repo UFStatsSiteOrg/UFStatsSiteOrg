@@ -12,8 +12,8 @@ app.post('/submit', async (req : Request, res : Response) => {
   const requestBody : R.Input = req.body;
   const data : R.Data = inputTransform(requestBody);
   console.log(data);
-  const output : string = await runScript(data);
-  res.send(output);
+  const rResponse : R.Response = await runScript(data);
+  res.send(rResponse);
 })
 
 app.listen(process.env.PORT, () => {
