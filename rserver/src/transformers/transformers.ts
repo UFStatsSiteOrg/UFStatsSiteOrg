@@ -9,18 +9,21 @@ const requestTransformer = (requestBody : R.Input) : R.Data => {
     }
 }
 
-const codeTransformer = (rData : R.Data) : R.Data => {
+const codeTransformer = (data : R.Data) : R.Data => {
     let i;
     let outputCounter = 0;
-    for (i = 0; i < rData.code.length; i++) {
-        if (rData.code[i].trim().startsWith("plot(")) {
-            rData.code.splice(i - 1, 0, `jpeg(file=\"./output/${rData.id}-${outputCounter}.jpg\")`);
+    for (i = 0; i < data.code.length; i++) {
+        if (data.code[i].trim().startsWith("plot(")) {
+            data.code.splice(i - 1, 0, `jpeg(file=\"./output/${data.id}-${outputCounter}.jpg\")`);
             outputCounter++;
-            i += 1;
+            i += 1; // Skip over inserted jpeg line
         }
     }
-    // rData.code.splice(i, 0, "dev.off()");
-    return rData;
+    // Append outputCounter to data to indicate number of images to expect
+    return {
+        ...data,
+        outputImageNumber : outputCounter
+    }
 } 
 
 export const inputTransform = (requestBody : R.Input) : R.Data => {
