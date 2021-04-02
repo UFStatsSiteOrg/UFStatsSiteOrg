@@ -24,6 +24,10 @@ const cleanupScripts = async (id : string) : Promise<void> => {
     await unlinkPromise(__dirname + `/../../containers/scripts/${id}.R`);
 }
 
+const cleanupImage = async (imageID : string) : Promise<void> => {
+    await unlinkPromise(__dirname + `/../../containers/output/${imageID}.jpg`)
+}
+
 const cleanupImages = async (id : string) : Promise<void> => {
     // Reads all files in output image directory
     const files : string[] = await readdirPromise(__dirname + '/../../containers/output');

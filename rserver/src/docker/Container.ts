@@ -50,7 +50,7 @@ export default class Container {
         }        
     }
 
-    public async runRoutine() : Promise<R.Response> {
+    public async run() : Promise<R.Response> {
         await this.startContainer();
         const textOutput : R.Response = await this.captureOutput();
         await this.cleanupContainer();
