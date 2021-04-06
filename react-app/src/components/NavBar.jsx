@@ -7,17 +7,20 @@ export default class NavBar extends Component {
 
     render () {
         return (
-        <Navbar bg="primary" variant={"light"}>
-            <Navbar.Brand href="/">
+        <Navbar variant={"dark"} class="navbar navbar-light bg-light">
+            {/* <Navbar.Brand href="/">
                 <img
-                    src="tealLogo.png"
+                    src = "tealLogo.png"
                     class={'img-fluid'}
-                    alt="Main Logo"
+                    alt=""
                     />
-            </Navbar.Brand>
+            </Navbar.Brand> */}
+
+      
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
+                    <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/contact">Contact Us</Nav.Link>
                     <Nav.Link href="/officers">Officers</Nav.Link>
                     <Nav.Link href="/polls">Polls</Nav.Link>

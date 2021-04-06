@@ -6,7 +6,7 @@ function InternshipsPage() {
         <div>
             <h1>InternshipsPage</h1>
             <NavBar />
-            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT_XeXB6si2seOZNBZOHd2TFScmjOWU1QeUgK4niRBXxvLNch7VztI83HgPaZXwRxHO6tlYo-TGDNFF/pubhtml?widget=true&amp;headers=false" width="80%" height="300"></iframe>
+            <div align="center"> <iframe src="https://docs.google.com/spreadsheets/d/1y1xt7KoZI1-CAaIIDLihsZHNNUWpL1XXKql-vnaTnNw/edit#gid=0/pubhtml?widget=true&amp;headers=false" width="80%" height="850" ></iframe> </div>
         </div>
     )
 }
