@@ -6,6 +6,12 @@
     float: left;
     color: #282c34;
 }
+.jumbotron {
+    background-image: url("../gatorLogo.jpg");
+    background-size: cover;
+    position: center;
+    padding: 12em;
+}
 
 figure {
     width: 300px;
