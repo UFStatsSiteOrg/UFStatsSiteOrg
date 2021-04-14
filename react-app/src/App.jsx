@@ -1,6 +1,7 @@
 import { HomePage, OfficerPage, InternshipPage, PollsPage, RPage, ContactPage } from './components'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Posts from "./components/posts"
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         </Route>
         <Route path="/">
           <HomePage/>
+          <Posts />
         </Route>
       </Switch>
     </Router>

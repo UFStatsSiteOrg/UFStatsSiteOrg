@@ -1,5 +1,25 @@
 .home-header {
-    font-size: xx-large;
     text-align: center;
+    font-size: 50px;
+    padding-top: 40px;
+    padding-left: 0px;
+    float: left;
     color: #282c34;
+}
+
+figure {
+    width: 300px;
+    overflow: hidden;
+    margin: 0;
+}
+figure img {
+    display: inline-block;
+    background-position: left;
+    width: 100%;
+    margin: -3% 0;
+    float: none;
+
+}
+header {
+    white-space: nowrap;
 }

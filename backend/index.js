@@ -7,6 +7,21 @@ const express = require('express');
 const { response } = require('express');
 const app = express()
 const port = 8080
+
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://127.0.0.1:27017/details", {
+    useNewUrlParser: true
+});
+
+const router = express.Router();
+const connection = mongoose.connection;
+
+connection.once("open", function() {
+    console.log("Connection with MongoDB was successful");
+});
+
+let post = (require("./model"));
+
 app.use(bodyParser.json());
 var corsOptions = {
     origin: '*',
@@ -44,6 +59,18 @@ app.post('/api/contact', cors(corsOptions), async (req, res) => {
 
     res.status(200).json(req.body);
 })
+
+app.use("/", router);
+
+router.route("/getData").get(function(req, res) {
+    post.find({}, function(err, result) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)

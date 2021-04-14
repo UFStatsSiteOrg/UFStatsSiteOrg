@@ -7,9 +7,14 @@ export namespace R {
         id : string
         timestamp : number
         code : [string]
+        outputImageNumber? : number
     }
     
     export interface Response {
-        logs : string
+        success : boolean
+        stdout? : string
+        stderr? : string
+        id? : string
+        outputImageNumber? : number
     }
 }
