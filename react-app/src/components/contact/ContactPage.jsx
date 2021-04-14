@@ -38,7 +38,7 @@ import './ContactPage.css'
         <div>
         <NavBar/>
         <Jumbotron className= "b py-16">
-                <h1 className={"home-header font-semibold text-4xl"} >Contact us!</h1>
+                <h1 className={"home-header font-semibold text-3xl"} >Contact us!</h1>
         </Jumbotron>
         <div className="b py-16 color:#282c34 px-4 sm:px-6 h-screen w-screen flex justify-center items-center">
             <div className="mx-auto w-full max-w-2xl rounded-xl bg-white p-8 shadow">

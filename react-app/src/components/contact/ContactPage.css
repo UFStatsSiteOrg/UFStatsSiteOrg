@@ -1,5 +1,8 @@
 .home-header {
-    font-size: x-large;
     text-align: center;
+    font-size: 50px;
+    padding-top: 5px;
+    padding-left: 0px;
+    float: left;
     color: #282c34;
 }
