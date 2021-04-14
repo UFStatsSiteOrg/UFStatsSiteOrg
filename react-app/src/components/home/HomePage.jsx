@@ -9,29 +9,22 @@ import {Container, Row, Col} from "react-bootstrap";
 function HomePage() {
     return (
         <div>
-            <NavBar />
-            <Container>
 
-                <Jumbotron>
-                    <Row>
+            <NavBar>
 
-                        <Col xs={3}>
-                        <figure>
-                            <img src={Img} alt={"stats club logo"}/>
-                        </figure>
-                        </Col>
-                        <Col xs={6}>
-                            <h1 className="home-header">Welcome to the Home of the University of Florida Statistics Club</h1>
-                        </Col>
+            </NavBar>
 
-                        </Row>
+
+                <Jumbotron class="jumbotron">
+
+
                     </Jumbotron>
                 <Row>
                     <Col>
                     <Bulletin/>
                     </Col>
                     </Row>
-
+            <Container>
 
 
         </Container>
