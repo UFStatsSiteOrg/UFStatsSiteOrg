@@ -6,10 +6,11 @@ import { validateBody } from './util/middleware'
 
 require('dotenv').config()
 const app = express()
-
+let cors = require('cors');
+app.use(cors());
 app.use(express.json());
 
-app.post('/submit', validateBody, async (req : Request, res : Response) => {
+app.post('/api/submit', validateBody, async (req : Request, res : Response) => {
   const requestBody : R.Input = req.body;
   // Transform input data to appropriate shape and insert necessary R code for export
   const data : R.Data = inputTransform(requestBody);
