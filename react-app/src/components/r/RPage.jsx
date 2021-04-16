@@ -12,10 +12,10 @@ function RPage() {
         <>
             <NavBar />
             <div class="h-screen container mx-auto flex flex-row">
-                <div class="h-full rounded-lg bg-gray-500 bg-opacity-40 container flex flex-col py-4 px-6 m-4">
+                <div class="h-5/6 rounded-lg bg-gray-500 bg-opacity-40 container flex flex-col py-4 px-6 m-4">
                     <Console setOutput={setOutput}/>
                 </div>
-                <div class="h-full rounded-lg bg-gray-500 bg-opacity-40 container flex flex-col py-4 px-6 m-4">
+                <div class="h-5/6 rounded-lg bg-gray-500 bg-opacity-40 container flex flex-col py-4 px-6 m-4">
                     <Output output={output}/>
                 </div>
             </div>
