@@ -1,14 +1,17 @@
 import React, {useState} from "react";
 import "tailwindcss/tailwind.css"
 
-function Output() {
+function Output({output}) {
 
-    const [ textValue, setTextValue ] = useState("");
+    const out = output;
 
     return (
-        <div>
-            Test
-        </div>
+        <>
+            <div class="box__title bg-grey-lighter px-3 py-2 border-b">
+                <h3 class="text-sm text-grey-darker font-medium my-1">Output</h3>
+            </div>
+            <div class="font-mono text-sm h-full resize-none focus:outline-none text-grey-darkest flex-1 p-2 m-1 bg-transparent">{out}</div>
+        </>
     )
 }
 
