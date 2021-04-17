@@ -6,3 +6,9 @@
     float: left;
     color: #282c34;
 }
+.jumbotronn {
+    background-image: url("../logo.png");
+    background-size: cover;
+    position: center;
+    padding: 12em;
+}
