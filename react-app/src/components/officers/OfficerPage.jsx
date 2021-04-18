@@ -36,9 +36,9 @@ function OfficerPage() {
         <div className="mx-auto text-black w-full max-w-2xl w-2/3 rounded-xl bg-white p-8 shadow">
             <h1 className="text-black">Workshops Chair: Emily Zhang</h1>
         </div>
-        <div className="mx-auto text-black w-full max-w-2xl w-2/3 rounded-xl bg-white p-8 shadow">
+        {/* <div className="mx-auto text-black w-full max-w-2xl w-2/3 rounded-xl bg-white p-8 shadow">
             <h1 className="text-black">Workshops Chair: Emily Zhang</h1>
-        </div>
+        </div> */}
         <div className="mx-auto text-black w-full max-w-2xl w-2/3 rounded-xl bg-white p-8 shadow">
             <h1 className="text-black">Social Media Committee: Sam Anderman, Seth Lewertow, and Daniel Hopkins</h1>
         </div>
