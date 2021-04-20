@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 
 const express = require('express');
 const app = express()
-const port = 8080
+// const port = 8080
 
 // const mongoose = require("mongoose");
 // mongoose.connect("mongodb://127.0.0.1:27017/details", {
@@ -78,5 +78,5 @@ app.post('/api/contact', cors(corsOptions), async (req, res) => {
 // });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening at http://localhost:${process.env.PORT}`)
 })
