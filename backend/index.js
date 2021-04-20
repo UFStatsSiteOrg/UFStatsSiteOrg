@@ -37,8 +37,8 @@ app.post('/api/contact', cors(corsOptions), async (req, res) => {
         port: 465,
         secure: true,
         auth:{
-            user: 'UFSWEStatsClub@gmail.com',
-            pass: 'Swe2021!'
+            user: procces.env.USER,
+            pass: process.env.PASS
         },
     });
 
