@@ -53,7 +53,7 @@ function HomePage() {
                     <FontAwesomeIcon icon={faTwitter}  size="2x"/>
                     </a>
             </div>
-                <Jumbotron class="jumbotronHome">
+                <Jumbotron className={"cover"}>
 
 
                     </Jumbotron>

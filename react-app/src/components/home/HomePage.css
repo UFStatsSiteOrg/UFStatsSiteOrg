@@ -6,7 +6,7 @@
     float: left;
     color: #282c34;
 }
-.jumbotron {
+.cover {
     background-image: url("../gatorLogo.jpg");
     background-size: cover;
     position: center;
