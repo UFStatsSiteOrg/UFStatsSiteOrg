@@ -6,6 +6,6 @@
     "serverinstall": "cd backend && npm install",
     "reactinstall": "cd react-app && npm install",
     "build": "cd react-app && npm build",
-    "start": "npm run serverinstall && npm run reactinstall && npm run build"
+    "start": "npm run serverinstall && npm run reactinstall && npm run build && node backend/index.js"
   }
 }
