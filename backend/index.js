@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 var cors = require('cors');
 var bodyParser = require('body-parser');
-
+const path = require('path');
 const express = require('express');
 const app = express()
 // const port = 8080
@@ -77,6 +77,6 @@ app.post('/api/contact', cors(corsOptions), async (req, res) => {
 //     });
 // });
 
-app.listen(port, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Example app listening at http://localhost:${process.env.PORT}`)
 })
