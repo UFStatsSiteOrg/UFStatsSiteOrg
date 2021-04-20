@@ -18,3 +18,8 @@ $ cd to file path
 $ npm install
 $ npm start
 ```
+## Credits
+- [@demiiglesias](https://github.com/demiiglesias)
+- [@smehringer1](https://github.com/smehringer1)
+- [@JLBeem](https://github.com/JLBeem)
+- [@Cheese1654](https://github.com/Cheese1654)
