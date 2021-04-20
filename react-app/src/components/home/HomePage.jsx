@@ -24,10 +24,10 @@ let password = "world";
 
 function HomePage() {
 
-    const { token, setToken } = useToken();
-    if(!token) {
-        return <Login setToken={setToken} />
-    }
+    //const { token, setToken } = useToken();
+    //if(!token) {
+    //    return <Login setToken={setToken} />
+    //}
 
 
     return (
@@ -53,7 +53,7 @@ function HomePage() {
                     <FontAwesomeIcon icon={faTwitter}  size="2x"/>
                     </a>
             </div>
-                <Jumbotron class="jumbotron">
+                <Jumbotron class="jumbotronHome">
 
 
                     </Jumbotron>
