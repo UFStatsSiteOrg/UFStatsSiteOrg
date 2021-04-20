@@ -5,8 +5,7 @@
   "scripts": {
     "serverinstall": "cd backend && npm install",
     "reactinstall": "cd react-app && npm install",
-    "buildreact": "cd react-app && npm build",
-    "start": "npm run buildreact && node backend/index.js",
-    "install": "npm run serverinstall && npm run reactinstall"
+    "start": "node backend/index.js",
+    "install": "npm run serverinstall"
   }
 }
