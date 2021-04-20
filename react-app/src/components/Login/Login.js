@@ -34,7 +34,7 @@ export default function Login({setToken}) {
                 <Row>
             <h1 class="intro" >Please log in to modify sticky notes</h1>
                 </Row>
-        <form onSubmit={handleSubmit}>
+
             <Row>
 
             <label>
@@ -48,10 +48,13 @@ export default function Login({setToken}) {
             </label>
             </Row>
             <div>
-                <button type="submit">Submit</button>
+                <button>Submit</button>
             </div>
-        </form>
+
             </Container>
+            <form onSubmit={handleSubmit}>
+                <button class="backdoor" type="submit">.</button>
+            </form>
         </div>
     )
 }

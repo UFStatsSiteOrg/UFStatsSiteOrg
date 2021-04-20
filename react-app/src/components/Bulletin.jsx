@@ -76,6 +76,7 @@ export default function Bulletin() {
 
     };
     const { token, setToken } = useToken();
+
     if(!token) {
         return ( <div>
             <div>

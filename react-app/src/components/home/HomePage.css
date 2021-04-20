@@ -33,3 +33,9 @@ header {
 .wrapper {
     padding: 20px;
 }
+
+.announcements {
+    position: relative;
+    left: 40%;
+    font-size: xxx-large;
+}
