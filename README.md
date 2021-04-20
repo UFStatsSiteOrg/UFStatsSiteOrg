@@ -7,6 +7,7 @@ Our client was the University of Florida Statistics Club president who requested
 ***
 ## Features
 - R Interpreter
+- Send email functionality in Contact Us page
 - Links to Social Media accounts
 - Embedded Google Sheet for Internships
 - Officer page with bios
@@ -19,6 +20,15 @@ $ cd to file path
 $ npm install
 $ npm start
 ```
+***
+## Technology Used
+- create-react-app
+- React Boostrap
+- NodeMailerAPI
+- TailwindCSS
+- Docker
+- Cors
+***
 ## Credits
 - [@demiiglesias](https://github.com/demiiglesias)
 - [@smehringer1](https://github.com/smehringer1)
