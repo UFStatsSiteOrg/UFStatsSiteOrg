@@ -1,3 +1,4 @@
+![Header](https://github.com/UFStatsSiteOrg/UFStatsSiteOrg/blob/a4817c43a8e5b02136417bb04def2e11e3f269c3/Homepage.png)
 # UF Statistics Club Site
 ***
 ## Description 
@@ -10,7 +11,7 @@ Our client was the University of Florida Statistics Club president who requested
 - Embedded Google Sheet for Internships
 - Officer page with bios
 - Page for conducting polls
-## Screenshot
+***
 ## Installation
 ```
 $ git clone https://github.com/UFStatsSiteOrg/UFStatsSiteOrg.git
