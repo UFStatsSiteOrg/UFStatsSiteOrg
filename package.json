@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serverinstall": "yarn --cwd backend install",
-    "reactinstall": "yarn --cwd react-app install",
-    "build": "yarn --cwd react-app build"
+    "serverinstall": "cd backend && npm install",
+    "reactinstall": "cd react-app && npm install",
+    "build": "cd react-app && npm build",
+    "start": "npm run serverinstall && npm run reactinstall && npm run build"
   }
 }
