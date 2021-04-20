@@ -1,11 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import NavBar from "../NavBar";
 import Jumbotron from 'react-bootstrap/Jumbotron'
-import socialMedia from "../socialMedia"
+import socialMedia from "../socialMedia.jsx"
 import './HomePage.css'
 import Bulletin from "../Bulletin.jsx"
 import Img from '../logo.png'
 import ReactDom from "react-dom"
+import Login from '../Login/Login';
 import {Container, Row, Col} from "react-bootstrap";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import{
@@ -16,11 +17,21 @@ import{
 
 } from '@fortawesome/free-brands-svg-icons'
 import "../socialstyle.css"
+import useToken from './useToken';
+
+let username = "Hello";
+let password = "world";
 
 function HomePage() {
+
+    const { token, setToken } = useToken();
+    if(!token) {
+        return <Login setToken={setToken} />
+    }
+
+
     return (
-        <div>
-            
+       <div>
             <NavBar>
 
             </NavBar>
@@ -51,10 +62,8 @@ function HomePage() {
                     <Bulletin/>
                     </Col>
                     </Row>
-            <Container>
 
 
-        </Container>
 
         </div>
     )

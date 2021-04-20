@@ -29,3 +29,7 @@ figure img {
 header {
     white-space: nowrap;
 }
+
+.wrapper {
+    padding: 20px;
+}
