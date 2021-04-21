@@ -5,8 +5,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <Router basename="/">
+    <Router basename="/" hashType="noslash">
       <Switch>
+        <Route exact path="/">
+          <HomePage/>
+        </Route>
         <Route path="/officers">
           <OfficerPage/>
         </Route>
@@ -21,10 +24,6 @@ function App() {
         </Route>
         <Route path="/contact">
           <ContactPage/>
-        </Route>
-        <Route path="/">
-          <HomePage/>
-
         </Route>
       </Switch>
     </Router>
