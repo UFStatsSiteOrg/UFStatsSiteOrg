@@ -52,7 +52,9 @@ function HomePage() {
 
 
                     </Jumbotron>
+           <h1 className="announcements">Announcements</h1>
                 <Row>
+
                     <Col>
                     <Bulletin/>
                     </Col>
