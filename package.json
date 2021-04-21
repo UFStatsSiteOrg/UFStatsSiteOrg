@@ -7,6 +7,6 @@
     "serverinstall": "cd backend && npm install",
     "reactinstall": "cd react-app && npm install",
     "start": "node backend/index.js",
-    "install": "npm run serverinstall && npm run reactinstall && npm install craco && craco build"
+    "install": "npm run serverinstall && npm run reactinstall && cd react-app && npm install craco && craco build"
   }
 }
