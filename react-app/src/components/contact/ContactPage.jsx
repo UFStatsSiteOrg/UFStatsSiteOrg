@@ -16,7 +16,7 @@ import './ContactPage.css'
             console.log(values);
             let config = {
             method: 'post',
-            url: `http://localhost:8081/api/contact`,
+            url: `/api/contact`,
             headers:{
                 'Content-Type': 'application/json'
             },

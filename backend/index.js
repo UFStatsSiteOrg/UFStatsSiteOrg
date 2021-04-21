@@ -35,14 +35,16 @@ app.options('*', cors());
 
 app.post('/api/contact', cors(corsOptions), async (req, res) => {
     console.log(req.body);
+    // console.log(process.env.USERNAME);
+    // console.log(process.env.PASS);
     const{name, email, message} = req.body;
     const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
         secure: true,
         auth:{
-            user: procces.env.USER,
-            pass: process.env.PASS
+            user: "UFSWEStatsClub@gmail.com",
+            pass: "Swe2021!"
         },
     });
 
