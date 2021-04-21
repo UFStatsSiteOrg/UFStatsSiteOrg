@@ -1,11 +1,11 @@
 import { HomePage, OfficerPage, InternshipPage, PollsPage, RPage, ContactPage } from './components'
-import { HashRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
   return (
-    <Router basename="/">
+    <Router basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route path="/officers">
           <OfficerPage/>
