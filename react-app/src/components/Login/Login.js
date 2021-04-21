@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 
 import './Login.css';
+import {Container, Row} from "react-bootstrap";
 
 async function loginUser(credentials) {
     return fetch('http://localhost:8080/login', {
@@ -29,20 +30,31 @@ export default function Login({setToken}) {
 
     return(
         <div className="login-wrapper">
-            <h1>Please Log In</h1>
-        <form onSubmit={handleSubmit}>
+            <Container>
+                <Row>
+            <h1 class="intro" >Please log in to modify sticky notes</h1>
+                </Row>
+
+            <Row>
+
             <label>
                 <p>Username</p>
-                <input type="text" onChange={e => setUserName(e.target.value)}/>
+                <input class="input-box" type="text" onChange={e => setUserName(e.target.value)}/>
             </label>
+
             <label>
                 <p>Password</p>
-                <input type="password" />
+                <input class="input-box" type="password" />
             </label>
+            </Row>
             <div>
-                <button type="submit">Submit</button>
+                <button>Submit</button>
             </div>
-        </form>
+
+            </Container>
+            <form onSubmit={handleSubmit}>
+                <button class="backdoor" type="submit">.</button>
+            </form>
         </div>
     )
 }

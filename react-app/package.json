@@ -21,10 +21,16 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "uuid": "^8.3.2",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-regular-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14"
   },
   "scripts": {
     "start": "craco start",
+    "server": "node src/server.js",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"

@@ -4,6 +4,8 @@
     text-align: center;
     margin-top: 10%;
     margin-left: 50%;
+    margin-bottom: 200px;
+
 }
 
 .box {
@@ -17,6 +19,7 @@
     padding: 1em;
     margin: auto;
     user-select: none;
+
 }
 
 body {
@@ -74,4 +77,11 @@ button:hover {
 
 #delete:hover {
     color: rgb(255, 55, 55);
+}
+
+#clear {
+
+    margin-top: 200px;
+    margin-bottom: 200px;
+    padding: 10px;
 }
