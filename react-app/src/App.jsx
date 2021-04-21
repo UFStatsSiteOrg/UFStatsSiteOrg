@@ -1,11 +1,11 @@
 import { HomePage, OfficerPage, InternshipPage, PollsPage, RPage, ContactPage } from './components'
-import { HashRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
   return (
-    <Router basename="/" hashType="noslash">
+    <Router basename="/">
       <Switch>
         <Route exact path="/">
           <HomePage/>
