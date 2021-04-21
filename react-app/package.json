@@ -61,5 +61,5 @@
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.4",
     "use-magic-link": "^1.1.1"
   },
-  "homepage" : "https://ufstats.herokuapp.com/react-app"
+  "homepage" : "."
 }
