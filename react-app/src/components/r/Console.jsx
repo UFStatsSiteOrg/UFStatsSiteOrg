@@ -11,7 +11,7 @@ function Console({ setOutput }) {
         let textArray = textValue.split("\n");
         let req = {
             method: 'post',
-            url: `http://localhost:8080/api/submit`,
+            url: process.env.R_IP,
             headers:{
                 'Content-Type': 'application/json'
             },
